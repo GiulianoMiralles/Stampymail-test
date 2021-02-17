@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +11,24 @@
     <link rel="stylesheet" href="css/header.css">
 </head>
 
+<?php
+include 'includes/db.php';
+session_start();
+if (isset($_SESSION['email'])) { ?>
+
+<div id="container">
+    <nav>
+        <ul>
+            <li><a href="/stampymail-technical-test/index.php">Usuario: <?php echo $_SESSION['name']; ?></a></li>
+            <li><a href="/stampymail-technical-test/includes/log_out.php">Log Out</a></li> 
+        </ul>
+    </nav>
+</div>
+
+<?php
+  } else {
+    ?>
+
 <div id="container">
     <nav>
         <ul>
@@ -19,3 +38,7 @@
         </ul>
     </nav>
 </div>
+
+<?php
+    }
+    ?>
