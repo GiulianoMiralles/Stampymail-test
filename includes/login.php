@@ -1,4 +1,4 @@
-<!-- Aqui verifico que los datos del formulario de logeo correspondan con los de un usuario ya registrado en nuestra base de datos -->
+<!-- Aqui verifico que los datos del formulario de logeo correspondan con los de un usuario ya registrado en la base de datos -->
 
 <?php
 include 'db.php';
