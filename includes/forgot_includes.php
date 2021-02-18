@@ -36,7 +36,7 @@ if ($result['email'] == $email) {
                         <div class="card-body">
                         <form action="includes/forgot_includes.php" method="POST">
                             <p class="card-content">
-                            We have sent your new password to your email
+                                We have sent your new password to your email
                             </p>
                             </form>
                         </div>
@@ -50,17 +50,41 @@ if ($result['email'] == $email) {
 
 <?php
 } else {  //if the email does not exist in the database?>
-    <body>
-        <div class="login-box">
-            <img class="avatar" src="img/stampymail-logo.png" alt="logo de stampymail">
-            <h1>Recover password</h1>
-            <form action="includes/forgot_includes.php" method="POST">
-                <h4> The email entered is not in our database </h4>
-                <a href="login.php"> Go to login </a>
-            </form>
-        </div>
 
-    </body>
+
+<!DOCTYPE html>
+        <html lang="en">
+
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title> Recover password </title>
+            <link rel="stylesheet" href="../css/card.css">
+        </head>
+        <body>
+            <div class="wrapper">
+                <div class="container">
+
+                    <div class="card">
+                        <header class="card-header">
+                            <h2 class="card-title">Recover password</h2>
+                        </header>
+                        <div class="card-body">
+                        <form action="includes/forgot_includes.php" method="POST">
+                            <p class="card-content">
+                                The email entered is not in our database.
+                                Please try another email address.
+                            </p>
+                            </form>
+                        </div>
+                        <footer class="card-footer">
+                        <a href="../forgot.php"> Try again </a>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </body>
 <?php
 };
 ?>
