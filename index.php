@@ -16,8 +16,7 @@ if (isset($_SESSION['email'])) {
 
             <table>
                 <tr>
-                    <th scope="col" class="text-center">ID</th>
-                    <th scope="col" class="text-center">Nanme</th>
+                    <th scope="col" class="text-center">Name</th>
                     <th scope="col" class="text-center">Email</th>
                     <th scope="col" class="text-center">Acciones</th>
                 </tr>
@@ -30,7 +29,6 @@ if (isset($_SESSION['email'])) {
                 ?>
                         <tbody>
                             <tr>
-                                <th scope="row" class="text-center"><?php echo $row['id'] ?></th>
                                 <td class="text-center"><?php echo $row['name'] ?></td>
                                 <td class="text-center"><?php echo $row['email'] ?></td>
                                 <td class="text-center">

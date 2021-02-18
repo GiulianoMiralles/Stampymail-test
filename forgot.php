@@ -20,7 +20,7 @@ include('includes/header.php');
 			<!--Email-->
 			<label for="email">Email</label>
 			<input id="email" type="email" placeholder="Enter email" name="email" required>
-			<input type="submit" value="Sing Up">
+			<input type="submit" value="Recover password">
 			<a href="login.php"> Go to login </a>
 		</form>
 	</div>
