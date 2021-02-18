@@ -33,7 +33,7 @@ if (isset($_SESSION['email'])) {
                                 <td class="text-center"><?php echo $row['email'] ?></td>
                                 <td class="text-center">
                                     <a class="button-edit" href="../stampymail-technical-test/editUser.php?id=<?php echo $row[0] ?>">Edit</a>
-                                    <a class="button-delete" href="../stampymail-technical-test/includes/deleteUser.php?id=<?php echo $row[0] ?>"> Delete </a>
+                                    <a class="button-delete" href="../stampymail-technical-test/includes/deleteUser.php?id=<?php echo $row[0] ?>" onclick = "return confirm ('sure you want to delete this record?')"> Delete </a>
                                 </td>
                             </tr>
                         </tbody>

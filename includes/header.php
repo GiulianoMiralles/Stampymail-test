@@ -23,7 +23,7 @@ if (isset($_SESSION['email'])) { ?>
 
             <ul>
                 <li><a href="/stampymail-technical-test/index.php">Usuario: <?php echo $_SESSION['name']; ?></a></li>
-                <li><a href="/stampymail-technical-test/includes/log_out.php">Log Out</a></li>
+                <li><a href="/stampymail-technical-test/includes/log_out.php" onclick = "return confirm ('sure you want to log out?')">Log Out</a></li>
             </ul>
         </nav>
     </div>

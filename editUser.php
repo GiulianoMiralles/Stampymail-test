@@ -26,10 +26,10 @@ if (isset($_GET['id'])) {
     <form action="includes/editUser.php?id=<?php echo $_GET['id']; ?> " method="POST">
         <!--Name-->
         <label for="username">Name</label>
-        <input type="text" placeholder="Enter username" name="username" value='<?php echo $name ?>'>
+        <input type="text" placeholder="Enter username" name="username" required value='<?php echo $name ?>'>
         <!--Email-->
         <label for="password">Email</label>
-        <input type="email" placeholder="Enter email" name="email" value='<?php echo $email ?>'>
+        <input type="email" placeholder="Enter email" name="email" required value='<?php echo $email ?>'>
         <!--Password-->
         <label for="password">Password</label>
         <input type="password" placeholder="Enter password" name="password" value='<?php echo $password ?>'>
