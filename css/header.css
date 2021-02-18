@@ -1,5 +1,3 @@
-/* CSS Document */
-
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 @import url(https://fonts.googleapis.com/css?family=Bree+Serif);
 
@@ -7,63 +5,72 @@
 	margin: 0 auto;
 }
 
+.avatar {
+	height: 50px;
+	width: 50px;
+	border-radius: 40%;
+	position: absolute;
+	top: 5px;
+	left: 1%;
+}
+
 nav {
 	background-color: #000000;
+
 }
 
 nav ul {
 	padding: 0;
-    margin: 0;
+	margin: 0;
 	list-style: none;
 	position: relative;
-	}
-	
-nav ul li {
-	display:inline-block;
-	}
-
-nav a {
-	display:block;
-	padding:0 10px;	
-	color:#FFF;
-	font-size:20px;
-	line-height: 60px;
-	text-decoration:none;
+	left: 75%;
 }
 
+nav ul li {
+	display: inline-block;
+}
 
-nav a:hover { 
+nav a {
+	display: block;
+	padding: 0 10px;
+	color: #FFF;
+	font-size: 20px;
+	line-height: 60px;
+	text-decoration: none;
+}
+
+nav a:hover {
 	background-color: #185a9d;
 }
 
-/* Hide Dropdowns by Default */
 nav ul ul {
 	display: none;
-	position: absolute; 
-	top: 60px; /* the height of the main nav */
+	position: absolute;
+	top: 60px;
 }
-	
-/* Display Dropdowns on Hover */
-nav ul li:hover > ul {
-	display:inherit;
+
+nav ul li:hover>ul {
+	display: inherit;
 }
-	
-/* Fisrt Tier Dropdown */
+
 nav ul ul li {
-	width:170px;
-	float:none;
-	display:list-item;
+	width: 170px;
+	float: none;
+	display: list-item;
 	position: relative;
 }
 
-/* Second, Third and more Tiers	*/
 nav ul ul ul li {
 	position: relative;
-	top:-60px; 
-	left:170px;
+	top: -60px;
+	left: 170px;
 }
 
-	
-/* Change this in order to change the Dropdown symbol */
-li > a:after { content:  ' +'; }
-li > a:only-child:after { content: ''; }
+li>a:after {
+	content: ' +';
+}
+
+li>a:only-child:after {
+	content: '';
+}

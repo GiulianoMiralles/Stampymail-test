@@ -1,52 +1,69 @@
 <?php
-include 'db.php'; // importo la conexion a la base de datos
+include 'db.php';          //I import the connection from the database
 
-// obtener datos del formulario enviados por el metodo a post del archivo singup.php
+// I receive the data from the form and assign it to variables
 $name = $_POST['username'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 $password2 = $_POST['password2'];
 
-// control de que las dos contraseñas coincidan 
-if ($password !== $password2) {  
-    $_SESSION['error'] = 'no hay coincidencia en las contraseñas';
+// I verify that the passwords match
+if ($password !== $password2) {
+    $_SESSION['error'] = 'no match in passwords';
     header("location: ../login.php");
-    } else {
-        // verifico que el email ingresado no haya sido registrado antes por otro usuario
-        $query = "SELECT * from users where email='$email'";
-        $consult = mysqli_query($conection, $query);
-        $result = mysqli_fetch_array($consult);
+} else {
+    //I verify that there is no other user with the same email in the database
+    $query = "SELECT * from users where email='$email'";
+    $consult = mysqli_query($conection, $query);
+    $result = mysqli_fetch_array($consult);
 
-        if ($result['email'] == $email) {  
-            $_SESSION['error'] = 'Lo sentimos, al parecer este email ya pertenece a otro usuario, pruebe con otra direccion de correo.';
-            header("location: ../login.php");
-        } else {
-            // Una vez verificados los datos los inserto en la base de datos
-            $password_for_email = $password;
-            $password = md5($password_for_email);
-            $query = "INSERT INTO users (name, email, password) values('$name','$email','$password')";
-            $consulta = mysqli_query($conection, $query);
-            ?>
-                        <!DOCTYPE html>
+    if ($result['email'] == $email) {
+        $_SESSION['error'] = 'Sorry, it seems this email already belongs to another user, try another email address.';
+        header("location: ../login.php");
+    } else {
+        //if everything is fine, encrypt the password and insert the data into the database
+        $password_for_email = $password;
+        $password = md5($password_for_email);
+        $query = "INSERT INTO users (name, email, password) values('$name','$email','$password')";
+        $consulta = mysqli_query($conection, $query);
+?>
+        <!DOCTYPE html>
         <html lang="en">
+
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
-            <title> Registro exitoso!</title>
+            <title> User added successfully!</title>
+            <link rel="stylesheet" href="../css/card.css">
         </head>
+
         <body>
-        <div class="">
-            <h3 class=""> Usuario registrado con éxito. </h3>
-            <h4 class="">Le hemos enviado un correo a su email, proporcionandole los datos de acceso.</h4>
-            <a href="../login.php"><button class=""> Ir a login</button></a>
+
+            <div class="wrapper">
+                <div class="container">
+
+                    <div class="card">
+                        <?php include('../email/email_register.php'); ?>
+                        <header class="card-header">
+                            <h2 class="card-title">Successful registration</h2>
+                        </header>
+                        <div class="card-body">
+                            <p class="card-content">
+                                Your account was created successfully. <br>
+                                Enter your credentials at login to enter.
+                            </p>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="../login.php" class="card-link">Login</a>
+                        </footer>
+                    </div>
+                </div>
             </div>
-            <div class=""></div>
-        </div>
         </body>
+
         </html>
 <?php
     };
 };
 ?>
- 

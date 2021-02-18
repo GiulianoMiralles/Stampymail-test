@@ -13,7 +13,7 @@ include "includes/header.php";
         <input type="password" placeholder="Enter password" name="password">
 
         <input type="submit" value="Log In">
-        <a href="#"> Lost your password?</a><br>
+        <a href="forgot.php"> Lost your password?</a><br>
         <a href="singup.php"> Don't have an account?</a>
     </form>
 </div>

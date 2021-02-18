@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,29 +15,36 @@ include 'includes/db.php';
 session_start();
 if (isset($_SESSION['email'])) { ?>
 
-<div id="container">
-    <nav>
-        <ul>
-            <li><a href="/stampymail-technical-test/index.php">Usuario: <?php echo $_SESSION['name']; ?></a></li>
-            <li><a href="/stampymail-technical-test/includes/log_out.php">Log Out</a></li> 
-        </ul>
-    </nav>
-</div>
+    <div id="container">
+        <nav>
+            <a href="/stampymail-technical-test/index.php">
+                <img class="avatar" src="../../stampymail-technical-test/img/stampymail-logo.png" alt="logo de stampymail">
+            </a>
+
+            <ul>
+                <li><a href="/stampymail-technical-test/index.php">Usuario: <?php echo $_SESSION['name']; ?></a></li>
+                <li><a href="/stampymail-technical-test/includes/log_out.php">Log Out</a></li>
+            </ul>
+        </nav>
+    </div>
 
 <?php
-  } else {
-    ?>
+} else {
+?>
 
-<div id="container">
-    <nav>
-        <ul>
-            <li><a href="/stampymail-technical-test/index.php">Home</a></li>
-            <li><a href="/stampymail-technical-test/login.php">Log In</a></li> 
-            <li><a href="/stampymail-technical-test/singup.php">Sing Up</a></li>
-        </ul>
-    </nav>
-</div>
+    <div id="container">
+        <nav>
+            <a href="/stampymail-technical-test/index.php">
+                <img class="avatar" src="../../stampymail-technical-test/img/stampymail-logo.png" alt="logo de stampymail">
+            </a>
+            <ul>
+                <li><a href="/stampymail-technical-test/index.php">Home</a></li>
+                <li><a href="/stampymail-technical-test/login.php">Log In</a></li>
+                <li><a href="/stampymail-technical-test/singup.php">Sing Up</a></li>
+            </ul>
+        </nav>
+    </div>
 
 <?php
-    }
-    ?>
+}
+?>
